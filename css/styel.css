@@ -1,0 +1,294 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800;900&display=swap');
+* {
+    font-family: 'Nunito', sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-transform: capitalize;
+    outline: none;
+    border: none;
+    transition: all .2s linear;
+}
+html {
+    scroll-behavior: smooth;
+}
+h1 {
+    margin: 0%;
+}
+img {
+    width: 100%;
+    height: 100%;
+}
+a {
+    text-decoration: none;
+}
+ul {
+    list-style: none;
+}
+/* Start landing */
+.landing {
+    height: auto;
+    background-color: black;
+}
+.landing-content {
+    display: flex;
+    justify-content: center;
+    width: 95%;
+    margin: auto;
+    min-height: 80vh;
+    align-items: center;
+}
+.landing-content .landing-info {
+    color: white;
+    flex-basis: 40%;
+    padding: 10px;
+}
+.landing-content .landing-info> h1 {
+    font-size: 70px;
+}
+.landing-content .landing-info>p {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    word-spacing: 4px;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 5px 0 20px;
+}
+.btn {
+    padding: 10px 20px;
+    background-color: #212121d9;
+}
+.btn a {
+    text-transform: uppercase;
+    color: white;
+    font-size: 18px;
+    letter-spacing: 2px;
+}
+.landing-content .landing-img {
+    flex-basis: 50%;
+}
+.landing-content .landing-img>img {
+    object-fit:cover;
+}
+@media (max-width:1100px){
+    .landing-content .landing-info> h1 {
+        font-size: 50px;
+    }
+}
+@media (max-width:767px) {
+    .landing-content {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+    .landing-content .landing-img {
+        flex-basis: 100%;
+    }
+    .landing-content .landing-info {
+        align-items: center;
+        justify-content: flex-start;
+        flex-basis: 100%;
+    }
+}
+/* End landing */
+/* Start About */
+.about {
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+.about-content {
+    display: flex;
+    width: 80%;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin: 0px auto;
+}
+.about-content .about-info {
+    flex-basis: 50%;
+}
+.special-heading {
+    font-size: 40px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 3px;
+}
+.special-heading+p {
+    padding: 20px 0px;
+    font-weight: 700;
+    line-height: 1.7;
+    font-size: 13px;
+}
+.about-content .about-img {
+    height: 300px;
+    position: relative;
+    max-width: 304px;
+}
+.about-content .about-img img {
+    object-fit: contain;
+    object-position: bottom;position: relative;
+    width: 100%;
+}
+.about-content .about-img::after {
+    content: '';
+    position: absolute;
+    top: -25px;
+    right: -8%;
+    height: 350px;
+    width: 70%;
+    background-color: #7955487d;
+    z-index: -1;
+}
+@media (max-width:991px)  {
+    .about-content .about-img::after {
+        /* display: none; */
+    }
+    .about-content {
+        flex-direction: column;
+        row-gap: 50px;
+        align-items: flex-end;
+    } 
+    .about-content .about-img {
+    }
+    .about-content .about-info {
+        text-align: center;
+    }
+}
+/* End About */
+/* Start Services */
+.services {
+    padding: 100px 0;
+    width: 80vw;
+    margin: auto;
+}
+.services .special-heading, 
+.services .special-heading+p {
+    text-align: center;
+}
+.services .special-heading+p {
+    width: 500px;
+    max-width: 100%;
+    padding: 10px;
+    margin: 0 auto;
+}
+.services-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+}
+.services-content .card {
+    flex-basis: calc(100% / 3);
+    position: relative;
+    min-height: 300px;
+    transform-style: preserve-3d;
+    transition: .3s ease;
+}
+.services-content .card .front,
+.services-content .card .back {
+    position: absolute;
+    top: 0%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #0000002b;
+    transition: .3s ease;
+}
+.services-content .card:nth-child(2) .front {
+    background-image: url(../images/1091534.jpg);
+    background-position: 55%;
+    background-size: cover;
+    color: white;
+}
+.services-content .card:nth-child(2) .front>h2{
+    z-index: 1;
+}
+.services-content .card:nth-child(2) .front::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.315);
+}
+.services-content .card .front i {
+}
+.services-content .card .back {
+    transform: rotateY(180deg);
+    padding: 10px;
+    text-align: center;
+    row-gap: 13px;
+}
+.services-content .card .back>h2 {
+    font-size: 30px;
+    font-weight: 300;
+}
+.services-content .card .back>p {
+    line-height: 1.6;
+    font-weight: bold;
+}
+.services-content .card:hover {
+    transform: rotateY(180deg);
+}
+@media (max-width:991px) {
+    .services-content {
+        flex-direction: column;
+        row-gap: 15px;
+    }
+    .services-content .card {
+        width: 100%;
+    }
+    .services-content .card .back>p {
+        width: 450px;
+        max-width: 100%;
+    }
+}
+/* End Services */
+/* Start Hire */
+.hire {
+    text-align: center;
+    min-height: 100px;
+    background-color: #d4d4d4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 10px;
+}
+.hire>p {
+    font-size: 20px;
+    font-weight: 600;
+}
+/* End Hire */
+/* Start contact */
+.contact {
+    background-color: black;
+}
+.contact-content {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    padding: 50px 10px 10px;
+}
+.contact-content h2 {
+    text-transform: uppercase;
+    padding-bottom: 20px;
+}
+.contact-content ul {
+    text-align: center;
+}
+.contact-content ul li {
+    padding-bottom: 10px;
+}
+.contact-content p {
+    font-weight: 600;
+}
+/* End contact */
